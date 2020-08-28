@@ -3,23 +3,105 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Hello World test!!</title>
+	<title>Github Pagesの使い方</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="onload.js"></script>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
     <header class="bg-primary text-white">
-        <h1>これはテストサイトです</h1>
+        <h1 class="text-center">Github Pagesの使い方</h1>
     </header>
     <main class="container">
 
-    <p>ここはテストサイトです。</p>
+        <nav class-"my-1">
+            <ol>
+                <li>githubアカウントを作る</li>
+                <li>HTMLファイルを作り、githubにプッシュする</li>
+                <li>リポジトリの公開設定を変更する</li>
+            </ol>
+        </nav>
 
-    
+        <section class="my-1">
+            <h2 class="text-center py-2 bg-primary text-white">githubアカウントを作る</h2>
+
+            <p>まず、GitHubのアカウントを作る。</p>
+
+            <div class="text-center my-2"><img src="static/media/1.png" alt="アカウントを新しく作る"></div>
+
+            <p>ユーザー名、メールアドレス、パスワードを指定して、アカウント作成ボタンを押す</p>
+
+            <div class="text-center my-2"><img src="static/media/2.png" alt="アカウントを新しく作る"></div>
+
+            <p>gitコマンドが使えるようにする。Debian系OSは下記コマンドでインストール</p>
+
+            <pre><code>sudo apt install git</code></pre>
+
+            <p>macOSの方は下記コマンドでインストール</p>
+
+            <pre><code>sudo brew install git</code></pre>
+        
+            <p>git configでgitコマンドを打つ人の名前と連絡先を登録する。(メールアドレスは適当でOK)</p>
+
+<pre><code>git config --global user.name "Seiya Asahina"
+git config --global user.email "seiya.asahina0723@gmail.com"
+git config --global color.ui true
+</code></pre>
+            
+            <p>設定の確認。下記のように表示されればOK</p>
+
+            <div class="text-center my-2"><img src="static/media/3.png" alt="git config --listで現在の設定を確認できる"></div>
+        
+        </section>
+
+        <section class="my-1">
+            <h2 class="text-center py-2 bg-primary text-white">HTMLファイルを作り、githubにプッシュする</h2>
+        
+            <p>適当なディレクトリに適当なindex.htmlファイルを作る。そのディレクトリでgitコマンドを実行して初期化、コミットする</p>
+
+<pre><code>vi ./index.html
+git init
+git add .
+git commit -m "first commit"
+</code></pre>
+
+
+            <p>GitHub側ではリポジトリを作る。</p>
+
+            <div class="text-center my-2"><img src="static/media/4.png" alt="リポジトリを作る"></div>
+            
+            <p>リポジトリ名は、ユーザーID.github.ioとする。(注:画像は既に作られているアカウントのため、警告が出ている)</p>
+
+            <div class="text-center my-2"><img src="static/media/5.png" alt="リポジトリを作る"></div>
+
+            <p>リポジトリが作られた後は、ローカル環境で管理しているHTMLファイルと、リモートリポジトリを関連付け、プッシュする</p>
+
+<pre><code>git remote add origin https://github.com/(ユーザーID)/(リポジトリ名)
+git push -u origin master
+</code></pre>
+
+
+        </section>
+
+        <section class="my-1">
+            <h2 class="text-center py-2 bg-primary text-white">リポジトリの公開設定を変更する</h2>
+        
+            <p>ウェブページをプッシュしたリポジトリの設定を変更して、インターネットに公開することができる。</p>
+
+            <p>リポジトリのsettingsタブをクリック</p>
+
+            <div class="text-center my-2"><img src="static/media/6.png" alt="リポジトリの設定"></div>
+        
+            <p>Sourceの部分のタブをクリックして公開するブランチを指定(masterでOK)。Saveをクリックする。</p>
+
+            <div class="text-center my-2"><img src="static/media/7.png" alt="リポジトリの設定"></div>
+
+            <p>『Your site is ready to be published at 【サイトのURL】』に公開されたページのURLがあるのでそこをクリックして閲覧できる。</p>
+
+        </section>
+
     </main>
 </body>
 </html>

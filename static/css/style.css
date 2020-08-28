@@ -1,0 +1,23 @@
+html {
+  font-size: 18px;
+}
+@media (max-width:  768px)  {
+  html {
+    font-size: 15px;
+  }
+}
+
+img {
+    max-width:100%;
+    box-shadow: 2px 2px 2px 2px dimgray;
+    margin:0.5rem 0;
+}
+pre {
+    background:black;
+    padding:0.5rem;
+}
+pre code {
+    color:cyan;
+    font-size:0.9rem;
+
+}
